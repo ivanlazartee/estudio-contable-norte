@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio Contable Norte | Contadores públicos en Tucumán</title>
+  <meta name="description" content="Monotributo, autónomos, sociedades y sueldos. Llevamos tus impuestos al día para que no tengas que perseguir vencimientos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="contenedor header__fila">
+      <a href="#" class="logo" aria-label="Estudio Contable Norte, inicio">
+        <span class="logo__marca" aria-hidden="true">N</span>
+        <span class="logo__texto">Estudio Contable<strong>Norte</strong></span>
+      </a>
+
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto" class="btn btn--chico">Pedir una consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="contenedor hero__grid">
+        <div class="hero__texto">
+          <h1>Tus impuestos al día, sin perseguir vencimientos.</h1>
+          <p class="hero__bajada">
+            Somos un estudio contable de Tucumán que atiende a monotributistas,
+            profesionales y empresas de todo el país. Vos te ocupás de tu trabajo;
+            nosotros, de que nada se venza.
+          </p>
+          <div class="hero__acciones">
+            <a href="#contacto" class="btn">Pedir una consulta gratis</a>
+            <a href="#servicios" class="link">Ver servicios</a>
+          </div>
+        </div>
+
+        <!-- Libro mayor interactivo -->
+        <div class="libro" aria-labelledby="libro-titulo">
+          <div class="libro__cabecera">
+            <p class="libro__titulo" id="libro-titulo">Tu mes con nosotros</p>
+            <div class="libro__tabs" role="tablist" aria-label="Elegí tu situación">
+              <button role="tab" aria-selected="true" data-perfil="monotributo">Monotributo</button>
+              <button role="tab" aria-selected="false" data-perfil="autonomo">Responsable inscripto</button>
+              <button role="tab" aria-selected="false" data-perfil="sociedad">Sociedad</button>
+            </div>
+          </div>
+
+          <ul class="libro__lineas" id="libro-lineas" aria-live="polite">
+            <!-- Se completa con JS -->
+          </ul>
+
+          <div class="libro__total">
+            <span>Horas tuyas dedicadas a esto</span>
+            <span class="libro__cero">0 hs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="seccion" id="servicios">
+      <div class="contenedor">
+        <h2>Qué hacemos por vos</h2>
+        <p class="seccion__intro">Servicios mensuales con un precio fijo, para que sepas desde el primer día cuánto vas a pagar.</p>
+
+        <div class="servicios">
+          <article class="servicio">
+            <h3>Monotributo</h3>
+            <p>Alta, recategorizaciones, pago mensual y control de topes de facturación para que no te excluyan.</p>
+          </article>
+          <article class="servicio">
+            <h3>IVA y Ganancias</h3>
+            <p>Declaraciones juradas mensuales y anuales para responsables inscriptos y profesionales independientes.</p>
+          </article>
+          <article class="servicio">
+            <h3>Sociedades</h3>
+            <p>Constitución de SAS y SRL, balances, libros contables y presentaciones ante los organismos de control.</p>
+          </article>
+          <article class="servicio">
+            <h3>Sueldos y cargas sociales</h3>
+            <p>Liquidación de haberes, recibos, F.931 y asesoramiento en altas y bajas de personal.</p>
+          </article>
+          <article class="servicio">
+            <h3>Ingresos Brutos</h3>
+            <p>Régimen local y Convenio Multilateral si vendés en varias provincias.</p>
+          </article>
+          <article class="servicio">
+            <h3>Planificación fiscal</h3>
+            <p>Te ayudamos a elegir el régimen que más te conviene antes de empezar a facturar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="seccion seccion--papel" id="como-trabajamos">
+      <div class="contenedor">
+        <h2>Cómo empezamos a trabajar</h2>
+        <ol class="pasos">
+          <li class="paso">
+            <h3>Charlamos</h3>
+            <p>Una primera consulta gratis, presencial o por videollamada, para entender tu situación.</p>
+          </li>
+          <li class="paso">
+            <h3>Revisamos tu historial</h3>
+            <p>Miramos tus presentaciones anteriores y detectamos deudas o errores antes de que se conviertan en multas.</p>
+          </li>
+          <li class="paso">
+            <h3>Te pasamos un presupuesto</h3>
+            <p>Un abono mensual cerrado, sin extras escondidos.</p>
+          </li>
+          <li class="paso">
+            <h3>Nos ocupamos de todo</h3>
+            <p>Cada mes te avisamos qué pagamos, cuánto y cuándo. Vos solo aprobás.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="seccion">
+      <div class="contenedor">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonios">
+          <figure class="testimonio">
+            <blockquote>“Antes me enteraba de los vencimientos cuando ya tenía la multa. Hace dos años que no pienso más en eso.”</blockquote>
+            <figcaption>Lucía R., diseñadora gráfica, monotributista</figcaption>
+          </figure>
+          <figure class="testimonio">
+            <blockquote>“Armaron la SAS en una semana y nos explicaron todo en criollo. Se nota que les importa.”</blockquote>
+            <figcaption>Martín y Sofía, fundadores de una tienda online</figcaption>
+          </figure>
+          <figure class="testimonio">
+            <blockquote>“Tengo doce empleados y nunca tuve un problema con un recibo de sueldo.”</blockquote>
+            <figcaption>Jorge P., dueño de una panadería</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section class="seccion seccion--papel" id="equipo">
+      <div class="contenedor">
+        <h2>Quiénes somos</h2>
+        <p class="seccion__intro">Tres contadores públicos con más de quince años de experiencia, cada uno especializado en un área.</p>
+        <div class="equipo">
+          <div class="persona">
+            <span class="persona__inicial" aria-hidden="true">LA</span>
+            <h3>Cra. Laura Albornoz</h3>
+            <p>Monotributo y profesionales independientes</p>
+          </div>
+          <div class="persona">
+            <span class="persona__inicial" aria-hidden="true">DQ</span>
+            <h3>Cr. Diego Quiroga</h3>
+            <p>Sociedades y balances</p>
+          </div>
+          <div class="persona">
+            <span class="persona__inicial" aria-hidden="true">VM</span>
+            <h3>Cra. Valeria Medina</h3>
+            <p>Sueldos y cargas sociales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="seccion" id="preguntas">
+      <div class="contenedor contenedor--angosto">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details>
+            <summary>¿Tengo que ir al estudio?</summary>
+            <p>No. Podemos hacer todo de forma online. Si preferís venir, te esperamos en nuestra oficina de San Miguel de Tucumán.</p>
+          </details>
+          <details>
+            <summary>¿Trabajan con clientes de otras provincias?</summary>
+            <p>Sí. La mayoría de los trámites son digitales, así que atendemos a clientes de todo el país.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si tengo deudas o presentaciones atrasadas?</summary>
+            <p>Lo revisamos en la primera consulta y te proponemos un plan para regularizarte, incluyendo planes de pago si hace falta.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta el abono mensual?</summary>
+            <p>Depende de tu régimen y del volumen de movimientos. Te pasamos un precio cerrado después de la primera charla.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="seccion contacto" id="contacto">
+      <div class="contenedor contacto__grid">
+        <div>
+          <h2>Pedí tu consulta gratis</h2>
+          <p>Completá el formulario y te respondemos por WhatsApp en el día.</p>
+          <ul class="contacto__datos">
+            <li>Av. Mate de Luna 1200, San Miguel de Tucumán</li>
+            <li>Lunes a viernes de 8 a 17 hs</li>
+            <li><a href="mailto:hola@estudionorte.com.ar">hola@estudionorte.com.ar</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="form-contacto" novalidate>
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+
+          <label for="situacion">Tu situación</label>
+          <select id="situacion" name="situacion">
+            <option>Soy monotributista</option>
+            <option>Soy responsable inscripto</option>
+            <option>Tengo una sociedad</option>
+            <option>Todavía no estoy inscripto</option>
+          </select>
+
+          <label for="mensaje">¿En qué te podemos ayudar?</label>
+          <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+          <p class="form__error" id="form-error" role="alert"></p>
+          <button type="submit" class="btn btn--ancho">Enviar por WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer__fila">
+      <p>© <span id="anio"></span> Estudio Contable Norte</p>
+      <p>Sitio de demostración. Diseño y desarrollo: <a href="https://instagram.com/nortedigital.dev" target="_blank" rel="noopener">NorteDigital.dev</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-flotante" href="https://wa.me/5493810000000" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
