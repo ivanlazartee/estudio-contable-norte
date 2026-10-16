@@ -105,3 +105,85 @@ form.addEventListener("submit", (e) => {
 
 // ---------- 4. Año del footer ----------
 document.getElementById("anio").textContent = new Date().getFullYear();
+
+// ---------- 5. Planes: interruptor mensual / anual ----------
+const DESCUENTO_ANUAL = 0.15; // 15%
+
+const switchPeriodo = document.getElementById("periodo-switch");
+const opcionMensual = document.getElementById("periodo-mensual");
+const opcionAnual = document.getElementById("periodo-anual");
+const precios = document.querySelectorAll(".plan__precio");
+
+// Formatea números como pesos argentinos: 21250 -> "$ 21.250"
+const formatoPesos = new Intl.NumberFormat("es-AR", {
+  style: "currency",
+  currency: "ARS",
+  maximumFractionDigits: 0,
+});
+
+function actualizarPrecios(esAnual) {
+  precios.forEach((precio) => {
+    // El precio base está guardado en el HTML: data-mensual="25000"
+    const mensual = Number(precio.dataset.mensual);
+    const detalle = precio.nextElementSibling;
+
+    if (esAnual) {
+      // Ejemplo con el plan Monotributo:
+      // 25000 * (1 - 0.15) = 21250  -> lo que pagás por mes
+      // 21250 * 12         = 255000 -> lo que pagás en el año
+      const mensualConDescuento = Math.round(mensual * (1 - DESCUENTO_ANUAL));
+      const totalAnual = mensualConDescuento * 12;
+
+      precio.textContent = formatoPesos.format(mensualConDescuento);
+      detalle.innerHTML = `por mes<br>${formatoPesos.format(totalAnual)} en un pago`;
+    } else {
+      precio.textContent = formatoPesos.format(mensual);
+      detalle.textContent = "por mes";
+    }
+
+    // Reiniciamos la animación para que se note el cambio
+    precio.classList.remove("cambio");
+    void precio.offsetWidth; // truco: fuerza al navegador a "olvidar" la animación
+    precio.classList.add("cambio");
+  });
+
+  opcionMensual.classList.toggle("periodo__opcion--activa", !esAnual);
+  opcionAnual.classList.toggle("periodo__opcion--activa", esAnual);
+}
+
+switchPeriodo.addEventListener("click", () => {
+  const esAnual = switchPeriodo.getAttribute("aria-checked") !== "true";
+  switchPeriodo.setAttribute("aria-checked", esAnual);
+  actualizarPrecios(esAnual);
+});
+
+// Mostramos los precios con el mismo formato desde el inicio
+actualizarPrecios(false);
+
+// ---------- 6. Botones "Elegir" -> completan el formulario ----------
+document.querySelectorAll("[data-plan]").forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const esAnual = switchPeriodo.getAttribute("aria-checked") === "true";
+    const periodo = esAnual ? "con pago anual" : "con pago mensual";
+
+    form.situacion.value = boton.dataset.situacion;
+    form.mensaje.value = `Me interesa el plan ${boton.dataset.plan} ${periodo}.`;
+
+    document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
+    form.nombre.focus({ preventScroll: true });
+  });
+});
+
+// ---------- 7. Selector de plan en celular ----------
+// La tabla tiene data-col="3" (Responsable inscripto) por defecto.
+// Al tocar "Sociedad" pasa a data-col="4" y el CSS oculta las otras columnas.
+const tablaPlanes = document.querySelector(".tabla-planes");
+const botonesSelector = document.querySelectorAll(".planes__selector button");
+
+botonesSelector.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    botonesSelector.forEach((b) => b.setAttribute("aria-pressed", "false"));
+    boton.setAttribute("aria-pressed", "true");
+    tablaPlanes.dataset.col = boton.dataset.col;
+  });
+});

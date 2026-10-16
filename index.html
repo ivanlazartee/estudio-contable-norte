@@ -41,6 +41,7 @@
 
       <nav class="nav" id="nav">
         <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
         <a href="#como-trabajamos">Cómo trabajamos</a>
         <a href="#equipo">Equipo</a>
         <a href="#preguntas">Preguntas</a>
@@ -122,6 +123,117 @@
             <p>Te ayudamos a elegir el régimen que más te conviene antes de empezar a facturar.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="seccion" id="planes">
+      <div class="contenedor">
+        <div class="planes__cabecera">
+          <div>
+            <h2>Planes con precio cerrado</h2>
+            <p class="seccion__intro">Elegí según tu situación. Sin costos extra por presentación ni sorpresas a fin de mes.</p>
+          </div>
+
+          <div class="periodo">
+            <span id="periodo-mensual" class="periodo__opcion periodo__opcion--activa">Pago mensual</span>
+            <button class="periodo__switch" id="periodo-switch" role="switch" aria-checked="false" aria-label="Pagar anual con 15% de descuento"></button>
+            <span id="periodo-anual" class="periodo__opcion">Pago anual <span class="periodo__ahorro">15% menos</span></span>
+          </div>
+        </div>
+
+        <!-- Solo se ve en celular: elige qué columna mostrar -->
+        <div class="planes__selector" role="group" aria-label="Ver plan">
+          <button data-col="2" aria-pressed="false">Monotributo</button>
+          <button data-col="3" aria-pressed="true">Resp. inscripto</button>
+          <button data-col="4" aria-pressed="false">Sociedad</button>
+        </div>
+
+        <div class="tabla-planes__scroll">
+          <table class="tabla-planes" data-col="3">
+            <caption class="sr-only">Comparación de planes del estudio</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Qué incluye</span></th>
+                <th scope="col">
+                  <span class="plan__nombre">Monotributo</span>
+                  <span class="plan__precio" data-mensual="25000">$25.000</span>
+                  <span class="plan__detalle">por mes</span>
+                </th>
+                <th scope="col" class="plan--destacado">
+                  <span class="plan__etiqueta">El más elegido</span>
+                  <span class="plan__nombre">Responsable inscripto</span>
+                  <span class="plan__precio" data-mensual="48000">$48.000</span>
+                  <span class="plan__detalle">por mes</span>
+                </th>
+                <th scope="col">
+                  <span class="plan__nombre">Sociedad</span>
+                  <span class="plan__precio" data-mensual="95000">$95.000</span>
+                  <span class="plan__detalle">por mes</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Aviso de vencimientos por WhatsApp</th>
+                <td><span class="si">Incluido</span></td>
+                <td class="plan--destacado"><span class="si">Incluido</span></td>
+                <td><span class="si">Incluido</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Ingresos Brutos provincial</th>
+                <td><span class="si">Incluido</span></td>
+                <td class="plan--destacado"><span class="si">Incluido</span></td>
+                <td><span class="si">Incluido</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Pago y recategorización del monotributo</th>
+                <td><span class="si">Incluido</span></td>
+                <td class="plan--destacado"><span class="no">No aplica</span></td>
+                <td><span class="no">No aplica</span></td>
+              </tr>
+              <tr>
+                <th scope="row">IVA y anticipos de Ganancias</th>
+                <td><span class="no">No aplica</span></td>
+                <td class="plan--destacado"><span class="si">Incluido</span></td>
+                <td><span class="si">Incluido</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Declaración jurada anual</th>
+                <td><span class="no">No aplica</span></td>
+                <td class="plan--destacado"><span class="si">Incluido</span></td>
+                <td><span class="si">Incluido</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sueldos y cargas sociales</th>
+                <td><span class="no">No incluido</span></td>
+                <td class="plan--destacado"><span class="no">No incluido</span></td>
+                <td>Hasta 5 empleados</td>
+              </tr>
+              <tr>
+                <th scope="row">Balance anual firmado</th>
+                <td><span class="no">No aplica</span></td>
+                <td class="plan--destacado"><span class="no">No aplica</span></td>
+                <td><span class="si">Incluido</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Reunión de seguimiento</th>
+                <td>Una por año</td>
+                <td class="plan--destacado">Cada 6 meses</td>
+                <td>Todos los meses</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row"><span class="sr-only">Elegir plan</span></th>
+                <td><button class="btn btn--borde btn--chico" data-plan="Monotributo" data-situacion="Soy monotributista">Elegir</button></td>
+                <td class="plan--destacado"><button class="btn btn--chico" data-plan="Responsable inscripto" data-situacion="Soy responsable inscripto">Elegir</button></td>
+                <td><button class="btn btn--borde btn--chico" data-plan="Sociedad" data-situacion="Tengo una sociedad">Elegir</button></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="planes__nota">Precios de referencia en pesos argentinos, IVA incluido.</p>
       </div>
     </section>
 
